@@ -1,0 +1,241 @@
+
+<div class="section" id="breadcrumb">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="breadcrumb-tree">
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/service">All Service</a></li>
+          <li><a routerLink="/espace">Espaces</a></li>
+          <li class="active">{{espace.nom}}</li>
+
+          <!--   <li><a href="#">{{prod.NOM_FAMILLE}}</a></li>-->
+
+        </ul>
+      </div>
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /BREADCRUMB -->
+
+
+<!-- SECTION -->
+<div class="section">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row d-flex">
+      <!-- Product main img -->
+      <div class="col-md-5">
+        <div >
+
+
+
+
+
+            <img class="zoom"  [src]="espace.photo"  alt=""   width="600px" height="400px">
+
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <!-- /Product main img -->
+
+      <!-- Product thumb imgs -->
+      <div class="col-md-2  col-md-pull-5 ">
+
+      </div>
+      <!-- /Product thumb imgs -->
+
+      <!-- Product details -->
+      <div class="col-md-5">
+        <div class="product-details">
+          <h1 >{{espace.nom}}</h1>
+          <h4>{{espace.region}}</h4>
+
+          <div>
+            <!--<h3 class="product-price">{{product?.PRIX | currency:''}} </h3>-->
+            <span class="product-available">
+            <!--  {{ animateur.prix < 1 ? "NO STOCK" : "In Stock"}} -->
+            </span> <br> <br>
+          </div>
+
+
+
+          <ul class="product-links">
+            <li>Region:</li>
+            <li><h2>{{espace.region}}</h2></li>
+          </ul>
+          <ul class="product-links">
+            <li>ville:</li>
+            <li><h2>{{espace.ville}}</h2></li>
+          </ul>
+
+
+          <ul class="product-links">
+            <li>surface:</li>
+            <li><h2>{{espace.surface}}</h2></li>
+          </ul>
+          <ul class="product-links">
+            <li>ville:</li>
+            <li><h2>{{espace.num_mo}}</h2></li>
+          </ul>
+          <br>
+
+          <button (click)="reservation(espace.id)"  class="add-to-cart-btn"  >Reservation
+          </button>
+
+          <button (click)="devi(espace.id)"  class="add-to-cart-btn"  > Demende Devis
+          </button>
+
+
+          <ul class="product-links">
+            <li>Share:</li>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+          </ul>
+
+        </div>
+      </div>
+      <!-- /Product details -->
+
+      <!-- Product tab -->
+      <div class="col-md-12">
+        <div id="product-tab">
+          <!-- product tab nav -->
+          <ul class="tab-nav" role="tablist">
+            <li class="active" role="presentation"><a data-toggle="tab" href="#tab1" role="tab">Description</a></li>
+            <li role="presentation"><a data-toggle="tab" href="#tab2" role="tab">Details</a></li>
+            <li role="presentation"><a data-toggle="tab" href="#tab3" role="tab">References (3)</a></li>
+          </ul>
+          <!-- /product tab nav -->
+
+          <!-- product tab content -->
+          <div class="tab-content">
+            <!-- tab1  -->
+            <div class="tab-pane fade in active" id="tab1" role="tabpanel">
+              <div class="row">
+                <div class="col-md-12">
+                  <ul>
+                    <div>
+
+
+                    </div>
+
+
+                  </ul>
+
+
+
+
+
+                </div>
+              </div>
+            </div>
+            <!-- /tab1  -->
+
+            <!-- tab2  -->
+            <div class="tab-pane fade in" id="tab2" role="tabpanel">
+              <div class="row">
+                <div class="col-md-12">
+                  <p>{{espace.nom}}</p>
+                </div>
+              </div>
+            </div>
+            <!-- /tab2  -->
+
+            <!-- tab3  -->
+            <div class="tab-pane fade in" id="tab3" role="tabpanel" >
+              <table>
+                <tr> <td>PRODUIT</td><td>description</td> </tr>
+
+
+
+              </table>
+            </div>
+
+
+
+
+
+
+            <!-- /tab3  -->
+          </div>
+          <!-- /product tab content  -->
+        </div>
+      </div>
+      <!-- /product tab -->
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /SECTION -->
+
+<div class="section">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="section-title text-center">
+          <h3 class="title">Espaces liés </h3>
+        </div>
+      </div>
+
+
+      <!-- product -->
+      <div class="col-md-3 col-xs-6" *ngFor="let e of espaces" >
+        <div class="product">
+          <div class="product-img" >
+
+
+
+            <div *ngIf="e.photo !== null ; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock>
+              <img class="zoom"  [src]="e.photo"  alt="" width="200px"  height="200px" class="card-img-top" (click)="selectEspaces(e.id)">
+
+            </ng-template>
+            <ng-template #elseBlock>
+              <img class="zoom"  [src]="e.photo"  alt="" width="200px"  height="200px" class="card-img-top" (click)="selectEspaces(e.id)">
+            </ng-template>
+
+          </div>
+          <div class="product-body">
+
+            <h3 class="product-name"> <p>{{e.nom | titlecase}}</p></h3>
+            <h6>{{e.adresse.substr(0, 70)}} </h6>
+            <h4 class="product-price">
+              <del class="product-old-price"></del>
+            </h4>
+
+          </div>
+
+        </div>
+      </div>
+      <!-- /product -->
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>

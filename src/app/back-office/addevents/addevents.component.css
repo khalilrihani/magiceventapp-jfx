@@ -1,0 +1,24 @@
+mat-form-field{
+    width: 100%;
+  }
+  img {
+    width : 140px;
+    height : 100px;
+    }
+    input{
+      
+        font-size: 15px;
+        font-family: 'Londrina Shadow';
+        bleed:color#000;
+      }
+      textarea{
+        font-size: 15px;
+        font-family: 'Londrina Shadow';
+        bleed:color#000;
+      }
+      mat-label{
+        font-size: 15px;
+        font-family: 'Londrina Shadow';
+        bleed:color#000;
+      }
+    

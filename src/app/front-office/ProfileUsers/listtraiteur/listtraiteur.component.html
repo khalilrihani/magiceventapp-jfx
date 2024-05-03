@@ -1,0 +1,62 @@
+
+<div class="section" id="breadcrumb">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="breadcrumb-tree">
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/service">All service</a></li>
+          <li> Traiteur </li>
+
+          <!--   <li><a href="#">{{prod.NOM_FAMILLE}}</a></li>-->
+
+        </ul>
+      </div>
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /BREADCRUMB -->
+
+
+<div class="container">
+  <br><br>
+  <div class="section">
+    <!-- container -->
+    <div class="container">
+      <div class="col-md-12">
+        <h1> TRAITEURS :  {{espaces.lenth}}</h1>
+        <br> <br> <br>
+        <div class="row">
+          <div class="col-md-4 col-sm-6" *ngFor="let e of espaces" >
+            <div class="card my-2" >
+              <img [src]="e.photo"   width="200px" height="300px" class="card-img-top" (click)="selectEspaces(e.id)" style="cursor:pointer;">
+              <div class="card-header">
+                <div class="card-title">
+                  <h1 style="	margin-left: 50px;
+                       margin-right: 30px;">{{e.nom}}</h1>
+                </div>
+              </div>
+              <div class="card-body">
+                <h4>{{e.adresse.substr(0, 40)}}</h4>
+                <!--<p class="lead">{{p.PRIX | currency:'TND'}}</p>-->
+              </div>
+
+              <div class="row d-flex justify-content-center border-primary my-3">
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

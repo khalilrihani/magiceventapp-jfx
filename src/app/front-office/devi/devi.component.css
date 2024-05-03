@@ -1,0 +1,55 @@
+
+element.style {
+  overflow: auto;
+  position: relative;
+}
+.supernova body {
+  background-color: transparent;
+}
+.supernova body {
+  background-color: transparent;
+}
+body {
+  height: 100%;
+  overflow: scroll;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.93);
+}
+body, html {
+  touch-action: auto;
+}
+body {
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+}
+user agent stylesheet
+body {
+  display: block;
+  margin: 8px;
+}
+
+
+element.style {
+}
+
+  .jotform-form {
+    padding: 60px 0;
+  }
+
+    .jotform-form {
+      padding: 60px 0;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    user agent stylesheet
+    form {
+      display: block;
+      margin-top: 0em;
+      margin-block-end: 1em;
+    }

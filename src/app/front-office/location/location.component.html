@@ -1,0 +1,149 @@
+
+
+
+
+ <body>
+
+  <div>
+
+    <form class="container"  #l="ngForm">
+
+      <h4 class="text-warning text-center pt-5">Location profile</h4>
+
+<label>
+
+           Nom <input type="text" class="input" name="nom_societe" placeholder="Nom societe"    ngModel required  minlength="5"  />                   <div class="line-box">
+
+            <div class="line"></div>
+
+            </div>
+
+          </label>
+
+
+
+          <label>
+
+            <input
+
+                   type="text"
+
+                   class="input"
+
+                   name="adresse"
+
+                   placeholder="Adress"   ngModel  required/>
+
+            <div class="line-box">
+
+              <div class="line"></div>
+
+            </div>
+
+          </label>
+
+
+
+          <label>
+
+        <input
+
+                   type="email"
+
+                   class="input"
+                   ngModel
+                   name="email"
+
+                   placeholder="Email"
+                      required
+                      maxlength="30"/>
+
+            <div class="line-box">
+
+              <div class="line"></div>
+
+      </div>
+
+          </label>
+
+
+
+          <label>
+
+            <input
+
+                   type="tel"
+
+                   class="input"
+                   ngModel
+                   name="num_mo"
+
+                   placeholder="Numero mobile" required>
+
+            <div class="line-box">
+
+              <div class="line"></div>
+
+            </div>
+
+          </label>
+
+
+
+
+
+
+
+          <label>
+
+            <input
+
+                   type="text"
+
+                   class="input"
+
+                   name="region"
+
+                   placeholder="region"   ngModel  required/>
+
+            <div class="line-box">
+
+              <div class="line"></div>
+
+            </div>
+
+          </label>
+
+
+          <label>
+
+            <input
+
+                   type="text"
+
+                   class="input"
+
+                   name="ville"
+
+                   placeholder="ville"   ngModel  required/>
+
+            <div class="line-box">
+
+              <div class="line"></div>
+
+            </div>
+
+          </label>
+
+
+
+
+
+
+          <button type="submit"  (click)="addl(l.value)">submit</button>
+
+        </form>
+
+    </div>
+
+  </body>

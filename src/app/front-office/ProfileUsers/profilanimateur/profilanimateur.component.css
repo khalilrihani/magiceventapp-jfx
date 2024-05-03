@@ -1,0 +1,39 @@
+.zoom {
+
+}
+
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+
+  /* L'image est grossie de 25% */
+  -webkit-transform:scale(1.20); /* Safari et Chrome */
+  -moz-transform:scale(1.20); /* Firefox */
+  -ms-transform:scale(1.20); /* Internet Explorer 9 */
+  -o-transform:scale(1.20); /* Opera */
+  transform:scale(1.20);
+}
+
+button {
+  transition-duration: 0.4s;
+  font-size: 25px;
+  border-radius: 8px;
+  margin-left: 15Px;
+}
+
+button:hover {
+  background-color: #27293f; /* Green */
+  color: white;
+}
+
+h1 {
+  font-size: 45px;
+  margin-left: 30Px;
+  color: #00155d;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 30px;
+  margin-left: 60Px;
+}
+

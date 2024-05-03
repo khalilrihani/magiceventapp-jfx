@@ -1,0 +1,508 @@
+<div class="container">
+    <div class="row flex-lg-nowrap">
+   
+    </div>
+    
+    <div class="col">
+      <div class="e-tabs mb-3 px-3">
+      <ul class="nav nav-tabs">
+        <li class="nav-item"><a class="nav-link active" href="#">serveur</a></li>
+      </ul>
+      </div>
+    
+      <div class="row flex-lg-nowrap">
+      <div class="col mb-3">
+        <div class="e-panel card">
+        <div class="card-body">
+          <div class="card-title">
+          <h6 class="mr-2"><span>serveurs</span><small class="px-1">Details</small></h6>
+          </div>
+          <div class="e-table">
+          <div class="table-responsive table-lg mt-3">
+            <table class="table table-bordered" >
+            <thead>
+              <tr>
+              <th class="align-top">
+                <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0">
+                <input type="checkbox" class="custom-control-input" id="all-items" />
+                <label class="custom-control-label" for="all-items"></label>
+                </div>
+              </th>
+              <th>name</th>
+              <th class="max-width">cin</th>
+              <th class="sortable">Date</th>
+              <th>gende </th>
+              <th>langue </th>
+              <th>adress </th>
+              <th>tel </th>
+              <th>region </th>
+              <th>ville </th>
+              <th>taille</th>
+              <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let serv of listss"   >
+              
+              <tr  >
+              <td  class="align-middle">
+                <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                <input type="checkbox" class="custom-control-input" id="item-1" />
+                <label class="custom-control-label" for="item-1"></label>
+                </div>
+              </td>
+              <td class="align-middle text-center"  >{{serv.nom}} </td>
+         
+             
+              <td class="text-nowrap align-middle">{{serv.cin}}</td>
+              <td class="text-nowrap align-middle"><span>{{serv.date_naissance}}</span></td>
+              <td class="text-nowrap align-middle"><span>{{serv.gende}}</span></td>
+              <td class="text-nowrap align-middle"><span>{{serv.langue}}</span></td>
+              <td class="text-nowrap align-middle"><span>{{serv.adresse}}</span></td>
+              <td class="text-center align-middle">{{serv.num_mo}}</td>
+              <td class="text-center align-middle">{{serv.region}}</td>
+              <td class="text-center align-middle">{{serv.ville}}</td>
+              <td class="text-center align-middle">{{serv.taille}}</td>
+              <td class="text-center align-middle">
+                <div class="btn-group align-top">
+                  <button class="btn btn-sm btn-outline-secondary badge" type="submit" data-bs-toggle="modal" data-bs-target="#updatet"    (click)="update(r.value)">Edit</button>
+                  <button class="btn btn-sm btn-outline-secondary badge" type="submit"  (click)="delete(serv.id)" ><i class="fa fa-trash"></i></button>
+
+                  
+                </div>
+              </td>
+              </tr>
+              <tr>
+              <!-- <td class="align-middle">
+                <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                <input type="checkbox" class="custom-control-input" id="item-2" />
+                <label class="custom-control-label" for="item-2"></label>
+                </div>
+              </td> -->
+              <!-- <td class="align-middle text-center">
+                khalil
+              
+              </td>
+              <td class="text-nowrap align-middle">1426530</td>
+              <td class="text-nowrap align-middle"><span>30/07/1990</span></td>
+              <td class="text-nowrap align-middle"><span>M</span></td>
+              <td class="text-nowrap align-middle"><span>arabe</span></td>
+              <td class="text-nowrap align-middle"><span>beja</span></td>
+              
+              <td class="text-center align-middle">99199913</td>
+              <td class="text-center align-middle">
+                <div class="btn-group align-top">
+                  <button class="btn btn-sm btn-outline-secondary badge" type="button" data-bs-toggle="modal" data-bs-target="#userformmodal">Edit</button>
+                  <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
+                </div>
+              </td>
+              </tr>
+             
+              <tr>
+              
+              </tr>
+              <tr>
+             
+              </tr>
+              <tr>
+              
+              </tr>
+              <tr>
+              
+              </tr>
+              <tr>
+              
+              </tr>
+              <tr>
+             
+              </tr>
+              <tr>
+             
+              </tr>
+              <tr>
+             
+              </tr> -->
+            </tbody>
+            </table>
+          </div>
+          <div class="d-flex justify-content-center">
+           
+          </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-3 mb-3">
+        <div class="card">
+        <div class="card-body">
+          <div class="text-center px-xl-3">
+          <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#userformmodal">New bussnes User</button>
+          </div>
+        
+        </div>
+        </div>
+      </div>
+      </div>
+    
+      <!--Modal-->        
+      
+      <div class="modal fade" aria-labelledby="userformmodalLabel" aria-hidden="true" tabindex="-1" id="userformmodal">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Create serveur</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+         
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="py-1">
+          <form class="form" novalidate=""    name="form"  #r="ngForm">
+            <div class="row">
+            <div class="col">
+              <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                <label class="form-label">name</label>
+                <input class="form-control" type="text" name="nom" placeholder="name " value=""  name="nom" required 
+                ngModel name="nom"
+                #nom="ngModel"/>
+                <div class="alert alert-danger" *ngIf="nom.touched   && nom.invalid"> required</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label class="form-label">cin</label>
+                <input class="form-control" type="number" name="cin" placeholder="cin" value="cin" required 
+                ngModel name="cin"
+                #cin="ngModel"
+                min="8"/>
+                <div class="alert alert-danger" *ngIf="cin.touched   && cin.invalid"> required</div>
+                </div>
+        </div>
+              </div>
+              <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label class="form-label">date</label>
+                <input class="form-control" type="date" placeholder=""name="date_naissance" required 
+                ngModel name="date_naissance"
+                #date_naissance="ngModel"/>
+                <div class="alert alert-danger" *ngIf="date_naissance.touched   && date_naissance.invalid"> required</div>
+                </div>
+              </div>
+              </div>
+              <div class="row">
+              <div class="col mb-3">
+                <div class="mb-3">
+                    <label class="form-label">Address</label>
+                  <input class="form-control" type="text" name="adresse" placeholder="adress" value="adress"  required
+                  ngModel name="adresse"
+                  #adresse="ngModel"/>
+                  <div class="alert alert-danger" *ngIf="adresse.touched   && adresse.invalid"> required</div>
+                  </div>
+              </div>
+              </div>
+
+              <div class="row">
+                <div class="col mb-3">
+                  <div class="mb-3">
+                      <label class="form-label">gende</label>
+                    <input class="form-control" type="text" name="gende" placeholder="gende" value=""  required
+                    ngModel name="gende"
+                    #gende="ngModel"/>
+                    <div class="alert alert-danger" *ngIf="gende.touched   && gende.invalid"> required</div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="row">
+                    <div class="col mb-3">
+                      <div class="mb-3">
+                          <label class="form-label">langue</label>
+                        <input class="form-control" type="text" name="langue" placeholder="langue" value="" required 
+                        ngModel name="langue"
+                        #langue="ngModel"/>
+                        <div class="alert alert-danger" *ngIf="langue.touched   && langue.invalid"> required</div>
+                        </div>
+                    </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="row">
+                        <div class="col mb-3">
+                          <div class="mb-3">
+                              <label class="form-label">tel</label>
+                            <input class="form-control" type="number" name="num_mo" placeholder="tel" value=""  required
+
+                            ngModel name="num_mo"
+                            #num_mo="ngModel"
+                            min="8"/>
+                            <div class="alert alert-danger" *ngIf="num_mo.touched   && num_mo.invalid"> required</div>
+                            </div>
+                        </div>
+                        </div>
+
+
+
+
+                        <div class="row">
+                          <div class="col mb-3">
+                            <div class="mb-3">
+                                <label class="form-label">region</label>
+                              <input class="form-control" type="text" name="region" placeholder="" value="" required 
+                              ngModel name="region"
+                              #region="ngModel"/>
+                              <div class="alert alert-danger" *ngIf="region.touched   && region.invalid"> required</div>
+                              </div>
+                          </div>
+                          </div>
+
+
+
+
+
+
+
+                          
+                        <div class="row">
+                          <div class="col mb-3">
+                            <div class="mb-3">
+                                <label class="form-label">ville</label>
+                              <input class="form-control" type="text" name="ville" placeholder="" value="" required 
+                              ngModel name="ville"
+                              #ville="ngModel"/>
+                              <div class="alert alert-danger" *ngIf="ville.touched   && ville.invalid"> required</div>
+                              </div>
+                          </div>
+                          </div>
+
+
+
+
+
+
+                          
+                    <div class="row">
+                      <div class="col mb-3">
+                        <div class="mb-3">
+                            <label class="form-label">tel</label>
+                          <input class="form-control" type="number" name="taille" placeholder="taille" value=""  required
+
+                          ngModel name="taille"
+                          #taille="ngModel"
+                          min="8"/>
+                          <div class="alert alert-danger" *ngIf="taille.touched   && taille.invalid"> required</div>
+                          </div>
+                      </div>
+                      </div>
+            </div>
+            </div>
+            <div class="row">
+           
+            </div>
+            <div class="row">
+            <div class="col d-flex justify-content-end">
+              <button class="btn btn-primary" data-bs-dismiss="modal" type="submit" aria-label="" [disabled]="r.invalid" (click)="add(r.value)"> Save Changes</button>
+             
+            </div>
+            </div>
+          </form>
+    
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- updatefor -->
+    <div class="modal fade" aria-labelledby="userformmodalLabel" aria-hidden="true" tabindex="-1" id="updatet">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">update bussnes user</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+         
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="py-1">
+          <form class="form" novalidate=""    name="form"  #r="ngForm"  *ngFor="let serv of listss" >
+            <div class="row">
+            <div class="col">
+              <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                <label class="form-label">name</label>
+                <input class="form-control" type="text" name="nom" placeholder="name " value=""  name="nom" required 
+                ngModel name="nom"
+                #nom="ngModel"/>
+                <div class="alert alert-danger" *ngIf="nom.touched   && nom.invalid"> required</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label class="form-label">cin</label>
+                <input class="form-control" type="number" name="cin" placeholder="cin" value="cin" required 
+                ngModel name="cin"
+                #cin="ngModel"
+                min="8"/>
+                <div class="alert alert-danger" *ngIf="cin.touched   && cin.invalid"> required</div>
+                </div>
+        </div>
+              </div>
+              <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label class="form-label">date</label>
+                <input class="form-control" type="date" placeholder=""name="date_naissance" required 
+                ngModel name="date_naissance"
+                #date_naissance="ngModel"/>
+                <div class="alert alert-danger" *ngIf="date_naissance.touched   && date_naissance.invalid"> required</div>
+                </div>
+              </div>
+              </div>
+              <div class="row">
+              <div class="col mb-3">
+                <div class="mb-3">
+                    <label class="form-label">Address</label>
+                  <input class="form-control" type="text" name="adresse" placeholder="adress" value="adress"  required
+                  ngModel name="adresse"
+                  #adresse="ngModel"/>
+                  <div class="alert alert-danger" *ngIf="adresse.touched   && adresse.invalid"> required</div>
+                  </div>
+              </div>
+              </div>
+
+              <div class="row">
+                <div class="col mb-3">
+                  <div class="mb-3">
+                      <label class="form-label">gende</label>
+                    <input class="form-control" type="text" name="gende" placeholder="gende" value=""  required
+                    ngModel name="gende"
+                    #gende="ngModel"/>
+                    <div class="alert alert-danger" *ngIf="gende.touched   && gende.invalid"> required</div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="row">
+                    <div class="col mb-3">
+                      <div class="mb-3">
+                          <label class="form-label">langue</label>
+                        <input class="form-control" type="text" name="langue" placeholder="langue" value="" required 
+                        ngModel name="langue"
+                        #langue="ngModel"/>
+                        <div class="alert alert-danger" *ngIf="langue.touched   && langue.invalid"> required</div>
+                        </div>
+                    </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="row">
+                        <div class="col mb-3">
+                          <div class="mb-3">
+                              <label class="form-label">tel</label>
+                            <input class="form-control" type="number" name="num_mo" placeholder="tel" value=""  required
+
+                            ngModel name="num_mo"
+                            #num_mo="ngModel"
+                            min="8"/>
+                            <div class="alert alert-danger" *ngIf="num_mo.touched   && num_mo.invalid"> required</div>
+                            </div>
+                        </div>
+                        </div>
+
+
+
+
+                        <div class="row">
+                          <div class="col mb-3">
+                            <div class="mb-3">
+                                <label class="form-label">region</label>
+                              <input class="form-control" type="text" name="region" placeholder="" value="" required 
+                              ngModel name="region"
+                              #region="ngModel"/>
+                              <div class="alert alert-danger" *ngIf="region.touched   && region.invalid"> required</div>
+                              </div>
+                          </div>
+                          </div>
+
+
+
+
+
+
+
+                          
+                        <div class="row">
+                          <div class="col mb-3">
+                            <div class="mb-3">
+                                <label class="form-label">ville</label>
+                              <input class="form-control" type="text" name="ville" placeholder="" value="" required 
+                              ngModel name="ville"
+                              #ville="ngModel"/>
+                              <div class="alert alert-danger" *ngIf="ville.touched   && ville.invalid"> required</div>
+                              </div>
+                          </div>
+                          </div>
+
+
+
+
+
+
+                          
+                    <div class="row">
+                      <div class="col mb-3">
+                        <div class="mb-3">
+                            <label class="form-label">taill</label>
+                          <input class="form-control" type="number" name="taille" placeholder="taille" value=""  required 
+
+                          ngModel name="taille"
+                          #taille="ngModel"
+                          min="8"   ngModel [ngModel]="taille">
+                          <div class="alert alert-danger" *ngIf="taille.touched   && taille.invalid"> required</div>
+                          </div>
+                      </div>
+                      </div>
+            </div>
+            </div>
+            <div class="row">
+           
+            </div>
+            <div class="row">
+            <div class="col d-flex justify-content-end">
+              
+              <button class="btn btn-primary" data-bs-dismiss="modal" type="submit" aria-label="" [disabled]="r.invalid" (click)="update(r.value)"> update</button>
+            </div>
+            </div>
+          </form>
+    
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    

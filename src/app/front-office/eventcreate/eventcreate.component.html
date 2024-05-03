@@ -1,0 +1,211 @@
+
+
+<div class="container">
+  <div class="section">
+
+
+
+<!-- <h2>{{header}}</h2> -->
+<div class="main_bg">
+    <div class="form" >
+        <div class="form-text">
+            <h2>{{header}}</h2>
+            <!-- <img class="imag" src="assets/img/logo.png" alt=""> -->
+            <!-- <h1><span><img src="assets/img/art-1.png" alt=""></span>Magic Event<span><img src="assets/img/art-1.png" -->
+                        <!-- alt=""></span></h1> -->
+            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, fugit.</p> -->
+        </div>
+        <div class="main-form">
+            <form (ngSubmit)="onSubmit(f)"  #f="ngForm">
+                <div>
+                    <span>id</span>
+                    <input type="number" name="id" id="id" placeholder="Write id..."  [(ngModel)]="createvent.id" #id="ngModel"required  >
+                    <div class="form-text text-danger" *ngIf="id.errors?.['required']&&id.touched"> <p>Id is Required  </p></div>
+
+
+                </div>
+
+                <div>
+
+                    <span>name</span>
+                    <input type="text" name="name" id="name" placeholder="Write your name here..."
+                    [(ngModel)]="createvent.name" #name="ngModel" required  minlength="3">
+                    <div class="form-text text-danger" *ngIf="name.errors?.['required']&& name.touched"><p>name is Required</p> </div>
+                    <div class="form-text text-danger" *ngIf="name.errors?.['minlength']"> <p> name must have 3 character</p> </div>
+
+                </div>
+
+                <div>
+                    <!-- <---this is the select option--->
+                    <span>event type</span>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" ngModel name="event type">
+                        <option value="">--Please choose an option--</option>
+                        <!-- <option selected>select event</option> -->
+                        <option value="The team building"> The team building</option>
+                        <option value="The festival"> The festival</option>
+                        <option value=" wedding"> wedding</option>
+                        <option value="The seminar"> The seminar</option>
+                        <option value="Evening"> Evening</option>
+                        <option value="Product launch"> Product launch</option>
+                        <option value="private party"> private party</option>
+
+                    </select>
+                    <!-- </select> -->
+                    <!-- <---this is the select option--->
+                </div>
+                <div>
+                    <span>time</span>
+
+
+                    <input type="time" name="time" id="time" placeholder="Time"
+                     name="What time ?" [(ngModel)]="createvent.creates_at" #creates_at="ngModel" required>
+                     <div class="form-text text-danger" *ngIf="creates_at.errors?.['required']&&creates_at.touched"> <p>time is Required</p> </div>
+
+                </div>
+                <div>
+                    <!-- <---this is the select option  espace--->
+                    <span>space</span>
+
+
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" ngModel name="space" >
+                        <!-- <option selected>select space</option> -->
+                        <option value="">--Please choose an option--</option>
+                        <option value="party room"> party room</option>
+                        <option value="Guest houses"> Guest houses</option>
+                        <option value="open space"> open space</option>
+                        <option value="hotel room"> hotel room</option>
+                    </select>
+                    <!-- </select> -->
+                    <!-- <---this is the select option--->
+                </div>
+                <div>
+                    <span>participants</span>
+
+                    <input type="number" name="participant" id="particpants" placeholder="Write number here..." [(ngModel)]="createvent.nbr_invit" #nbr_invit="ngModel"required>
+                    <div class="form-text text-danger" *ngIf="nbr_invit.errors?.['required']&&nbr_invit.touched"> <p>Participant is Required</p> </div>
+
+                </div>
+                 <!-- --------------busines users select----------- -->
+                <div>
+                    <!-- <---this is the select option  espace--->
+                    <span>caterer</span>
+
+
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" ngModel name="caterer">
+                        <!-- <option selected>select caterer</option> -->
+                        <option value="">--Please choose an option--</option>
+                        <option value="caterer 1"> caterer 1</option>
+                        <option value="caterer 2"> caterer 2</option>
+                        <option value="caterer 3"> caterer 3</option>
+                        <option value="caterer 4"> caterer 4</option>
+                    </select>
+                    <!-- </select> -->
+                    <!-- <---this is the select option--->
+                </div>
+                <div>
+                    <span>waiter</span>
+
+
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" ngModel name="select waiter ?">
+                        <!-- <option selected>select waiter</option> -->
+                        <option value="">--Please choose an option--</option>
+                        <option value="waiter 1"> waiter 1</option>
+                        <option value="waiter 2"> waiter 2</option>
+                        <option value="waiter 3"> waiter 3</option>
+                        <option value="waiter 4"> waiter 4</option>
+                    </select>
+                </div>
+                <div>
+                    <!-- <---this is the select option  espace--->
+                    <span>animator</span>
+
+
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" ngModel name="animator">
+                        <!-- <option selected>select animator</option> -->
+                        <option value="">--Please choose an option--</option>
+                        <option value="animator 1"> animator 1</option>
+                        <option value="animator 2"> animator 2</option>
+                        <option value="animator 3"> animator 2</option>
+                        <option value="animator 4"> animator 3</option>
+                    </select>
+                    <!-- </select> -->
+                    <!-- <---this is the select option--->
+                </div>
+                <div>
+                    <span>tenant</span>
+
+
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"ngModel name="tenant">
+                        <!-- <option selected>select tenant</option> -->
+                        <option value="">--Please choose an option--</option>
+                        <option value="tenant 1"> tenant 1</option>
+                        <option value="tenant 2"> tenant 2</option>
+                        <option value="tenant 3"> tenant 3</option>
+                        <option value="tenant 4"> tenant 4</option>
+                    </select>
+                </div>
+                <div>
+                    <span>photographer</span>
+
+
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" ngModel name="photographer">
+                        <!-- <option selected>select photographer</option> -->
+                        <option value="">--Please choose an option--</option>
+                        <option value="photographer 1"> photographer 1</option>
+                        <option value="photographer 2"> photographer 2</option>
+                        <option value="photographer 3"> photographer 3</option>
+                        <option value="photographer 4"> photographer 4</option>
+                    </select>
+                </div>
+
+                <div>
+                    <span>date</span>
+
+
+                    <input type="date" name="date" id="date" placeholder="date" [(ngModel)]="createvent.date_event" #date_event="ngModel"required>
+                    <div class="form-text text-danger" *ngIf="date_event.errors?.['required']&&date_event.touched"> <p>date is Required</p> </div>
+
+                </div>
+                <div>
+                    <span>phone</span>
+
+                    <input class="form-control" type="number" name="phone" id="phone" placeholder="Write your number here..."  [(ngModel)]="createvent.phone" #phone="ngModel"required>
+                    <div class="form-text text-danger" *ngIf="phone.errors?.['required']&&phone.touched"><p>Phone is Required</p>  </div>
+
+                </div>
+                <div>
+                    <span>email</span>
+
+
+                    <input type="email" name="email" id="email" placeholder="Write your email here..."  [(ngModel)]="createvent.email" #email="ngModel"
+                    required
+                    class="form-control" >
+                    <div class="form-text text-danger" *ngIf="email.errors?.['required']&&email.touched" > <p>Email is Required</p> </div>
+
+                </div>
+
+
+
+                <!-- <div id="submit">
+                    <button type="submit" class="btn btn-primary "> Save</button>
+                </div> -->
+                <!-- routerLink="devi"  -->
+                <!-- <div id="submit">
+                    <input  type="submit" value="SUBMIT" id="submit" class="btn btn-primary ">
+                </div> -->
+                <div class="sub">
+                    <button type="submit" value="SUBMIT" id="submit" class="btn btn-outline-success">Submit</button>
+                    <button type="button" routerLink="/home" class="btn btn-outline-danger">Close</button>
+
+                </div>
+
+
+
+
+            </form>
+        </div>
+    </div>
+</div>
+  </div></div>
+
+

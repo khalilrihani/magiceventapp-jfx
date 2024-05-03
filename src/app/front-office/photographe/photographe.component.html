@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<div class="row justify-content-center"  >
+    <div class="row align-items-center justify-content-center">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 b-height">
+            <div class="row b-wrapper">
+                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 b-min-height">
+                    <div class="b-logo swift_left">
+
+                    </div>
+                    <div class="b-title text-center">
+                        <h1 class="user_title">Welcome photographe </h1>
+                        <p class="user_subTitle">To keep Connected with us please <br> create profile</p>
+
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+                    <div class="b-logo swift_right">
+
+                    </div>
+                    <div class="b-form text-center">
+                        <div class="b-form-title">
+                            <h1 class="form_title">Create Account photographe</h1> <br>
+
+                            <p class="b-subtext"></p>
+                        </div>
+                        <form method="post" action=""    #p="ngForm">
+                            <div class="form-group username">
+                                 Nom<input class="form-control" type="text" name="nom" placeholder="Name" required  ngModel><br>
+
+                            </div>
+                            <div class="form-group">
+                                Prenom<input class="form-control" type="text" name="prenom" placeholder="prenom" required  ngModel><br>
+
+                            </div>
+                            <div class="form-group">
+                                Numero Mobile<input class="form-control" type="tel" name="num" placeholder="numero mobile" required  ngModel><br>
+
+                            </div>
+                            <div class="form-group">
+                                Email<input class="form-control" type="email" name="mail" placeholder="mail" required  ngModel><br>
+
+                            </div>
+
+
+                            <div class="form-group">
+                                 Gendre<input class="form-control" type="text" name="gende" placeholder="gende" required  ngModel><br>
+
+                            </div>
+                            <div class="form-group">
+                                Adress<input class="form-control" type="text" name="adresse" placeholder="Address" required  ngModel><br>
+
+                            </div>
+
+                            <div class="form-group">
+                                Nom de societe<input class="form-control" type="text" name="societe" placeholder="Societe" required ngModel><br>
+
+                            </div>
+                            <div class="form-group">
+                              Nomber d'equipe  <input class="form-control" type="number" name="nbr_equipe" placeholder="nomber d'equipe" required ngModel><br>
+
+                            </div>
+                            <button type="submit" class="sign_up"   (click)="addp(p.value)">save</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+

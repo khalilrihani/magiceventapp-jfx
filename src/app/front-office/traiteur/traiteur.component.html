@@ -1,0 +1,86 @@
+<div class="content">
+
+  <div class="container">
+
+
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+
+        <div class="row align-items-center">
+          <div class="col-lg-7 mb-5 mb-lg-0">
+
+            <h2 class="mb-5">Traiteur account  <br> </h2>
+
+            <form class="border-right pr-5 mb-5" name="traiteurform"    #t="ngForm">
+              <div class="row" >
+
+                <div class="col-md-6 form-group"    >
+                  Nom societe
+                  <input type="text" class="form-control" name="nom_societe" id="nom_societe" placeholder=""  ngModel
+                   ngModel name="nom_societe"
+                  #nom_societe="ngModel"required/>
+                <div class="alert alert-danger" *ngIf="nom_societe.touched   && nom_societe.invalid"> required nom </div>
+                </div>
+
+
+
+                <div class="col-md-6 form-group">
+                  Address
+                  <input type="text" class="form-control" name="adresse" id="adresse" placeholder="adresse" required ngModel
+                  ngModel name="adresse"
+                  #adresse="ngModel"required/>
+
+                </div>
+                   <div class="alert alert-danger" *ngIf="adresse.touched   && adresse.invalid"> required adresse</div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  Region
+                  <input type="text" class="form-control" name="region" id="region" placeholder="region" required ngModel
+
+                  ngModel name="region"
+                  #region="ngModel"/>
+                <div class="alert alert-danger" *ngIf="region.touched   && region.invalid"> required region </div>
+                </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-12 form-group">
+                    Ville
+                    <input type="text" class="form-control" name="ville" id="ville" placeholder="ville" required ngModel
+                    ngModel name="ville"
+                    #ville="ngModel"/>
+                  <div class="alert alert-danger" *ngIf="ville.touched   && ville.invalid"> required ville</div>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    Numero mobile
+                    <input type="tel" class="form-control" name="num_mo" id="num_mo" placeholder="num_mo" required ngModel  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                  </div>
+                </div>
+
+              <div class="row">
+                  <div class="col-md-12">
+                    <input type="submit" value="Send" class="btn btn-primary rounded-0 py-2 px-4"   (click)="addt(t.value)">
+                    <span class="submitting"></span>
+                  </div>
+                </div>
+            </form>
+
+
+
+          </div>
+          <div class="col-lg-4 ml-auto">
+            <h3 class="mb-4">Let's talk about everything.</h3>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+              <img [src]="url" height="150px" width="150px"> <br>
+         <input type="file" (change)="onSelect($event)">
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+</div>

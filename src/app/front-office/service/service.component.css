@@ -1,0 +1,34 @@
+
+.service .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 35rem));
+    gap:2rem;
+}
+
+.service .box-container .box{
+    border-radius: .5rem;
+    background: rgb(67, 67, 82);
+    text-align: center;
+    padding:2.5rem;
+}
+
+.service .box-container .box img{
+    height: 30rem;
+    width: 30rem;
+    line-height: 6rem;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    background:var(--main-color);
+    color:#fff;
+}
+.service{
+  /*  background-color: #040919;*/
+
+}
+
+.service .box-container .box h3{
+    font-size: 3rem;
+    color:#fff;
+    padding:1rem 0;
+}
+
